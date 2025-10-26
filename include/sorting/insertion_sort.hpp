@@ -3,12 +3,14 @@
 
 #include <iostream>
 #include <vector>
-#include "../utils/timer.hpp"
+#include "utils/timer.hpp"
+#include "utils/csv_writer.hpp"
+#include "utils/vector_creator.hpp"
 
 /*
- *  Run insertion sort for given vector
+ *  Run insertion sort for different size of arrays
  */
-void testInsertionSort(std::vector<int>&);
+void testInsertionSort();
 
 /*
  *  Insertion Sort works by repeatedly picking the next element from the unsorted portion
