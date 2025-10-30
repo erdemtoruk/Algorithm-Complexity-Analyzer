@@ -2,7 +2,6 @@
 #define INSERTION_SORT_HPP
 
 #include <iostream>
-#include <vector>
 #include "utils/timer.hpp"
 #include "utils/csv_writer.hpp"
 #include "utils/vector_creator.hpp"
