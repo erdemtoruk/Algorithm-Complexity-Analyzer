@@ -3,7 +3,7 @@
 CSVWriter::CSVWriter(const std::string& filename) {
     file.open(filename, std::ios::out); // overwrite if exists
     if (file.is_open()) {
-        file << "N,min,avg,max\n"; // header row
+        file << "N;min;avg;max\n"; // header row
     }
 }
 
