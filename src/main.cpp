@@ -1,5 +1,6 @@
 #include "sorting/insertion_sort.hpp"
 #include "sorting/merge_sort.hpp"
+#include "sorting/quick_sort.hpp"
 
 
 int main() {
@@ -7,6 +8,7 @@ int main() {
 
     testInsertionSort();
     testMergeSort();
+    testQuickSort();
 
     return 0;
 }
