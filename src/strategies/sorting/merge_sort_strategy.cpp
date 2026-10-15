@@ -1,33 +1,9 @@
-#include "sorting/merge_sort.hpp"
+#include "strategies/sorting/merge_sort_strategy.hpp"
 
-void testMergeSort(){
-    Timer t;
-    double milisec = 0;
+#include <cstdint>
 
-    CSVWriter writer("results/merge_sort.csv");
-
-    for (int n = 100; n < 5000; n+=100)
-    {
-        double total = 0;
-        double min = 1e9;
-        double max = -1;
-        for(int i = 0; i < 20; i++)
-        {
-            std::vector<int> v = generateRandomVector(n);
-
-            t.start();
-            mergeSort(v, 0, (int) v.size()-1);
-            milisec = t.stop();
-
-            if(milisec < min) min = milisec;
-            if(milisec > max) max = milisec;
-            total += milisec;
-        }
-        double avg = total / 20.0;
-
-        writer.addRow(n, min, avg, max);
-    }
-}
+namespace {
+void merge(std::vector<int>& v, int p, int q, int r);
 
 void mergeSort(std::vector<int>& v, int p, int r){
     if(p < r){
@@ -64,4 +40,13 @@ void merge(std::vector<int>& v, int p, int q, int r){
         else
             v[k] = right[j++];
     }
+}
+}
+
+void MergeSortStrategy::sort(std::vector<int>& values) const {
+    mergeSort(values, 0, static_cast<int>(values.size()) - 1);
+}
+
+std::string MergeSortStrategy::name() const {
+    return "merge_sort";
 }

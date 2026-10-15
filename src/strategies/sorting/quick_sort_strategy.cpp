@@ -1,34 +1,6 @@
-#include "sorting/quick_sort.hpp"
+#include "strategies/sorting/quick_sort_strategy.hpp"
 
-void testQuickSort(){
-    Timer t;
-    double milisec = 0;
-
-    CSVWriter writer("results/quick_sort.csv");
-
-    for (int n = 100; n < 5000; n+=100)
-    {
-        double total = 0;
-        double min = 1e9;
-        double max = -1;
-        for(int i = 0; i < 20; i++)
-        {
-            std::vector<int> v = generateRandomVector(n);
-
-            t.start();
-            quickSort(v, 0, v.size()-1);
-            milisec = t.stop();
-
-            if(milisec < min) min = milisec;
-            if(milisec > max) max = milisec;
-            total += milisec;
-        }
-        double avg = total / 20.0;
-
-        writer.addRow(n, min, avg, max);
-    }
-}
-
+namespace {
 void quickSort(std::vector<int>& v, int lowIndex, int highIndex){
     // Base case
     if(highIndex <= lowIndex)
@@ -56,4 +28,13 @@ void quickSort(std::vector<int>& v, int lowIndex, int highIndex){
     // Recursively sort left and right partitions
     quickSort(v, lowIndex, leftIndex - 1);
     quickSort(v, leftIndex + 1, highIndex);
+}
+}
+
+void QuickSortStrategy::sort(std::vector<int>& values) const {
+    quickSort(values, 0, static_cast<int>(values.size()) - 1);
+}
+
+std::string QuickSortStrategy::name() const {
+    return "quick_sort";
 }

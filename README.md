@@ -27,7 +27,7 @@ A simple comparison-based sorting algorithm that builds the final sorted array o
 - **Space Complexity**
   - O(1)
 
-[Insertion Sort Header](include/sorting/insertion_sort.hpp) | [Insertion Sort Implementation](src/sorting/insertion_sort.cpp)
+[Insertion Sort Strategy](include/strategies/sorting/insertion_sort_strategy.hpp) | [Insertion Sort Implementation](src/strategies/sorting/insertion_sort_strategy.cpp)
 
 ### Merge Sort
 A divide-and-conquer algorithm that recursively splits the array into halves, sorts them, and then merges the sorted halves into one.
@@ -40,7 +40,7 @@ A divide-and-conquer algorithm that recursively splits the array into halves, so
 - **Space Complexity**
   - O(n)
 
-[Merge Sort Header](include/sorting/merge_sort.hpp) | [Merge Sort Implementation](src/sorting/merge_sort.cpp)
+[Merge Sort Strategy](include/strategies/sorting/merge_sort_strategy.hpp) | [Merge Sort Implementation](src/strategies/sorting/merge_sort_strategy.cpp)
 
 ### Quick Sort
 A divide-and-conquer algorithm that partitions the array around a pivot element and recursively sorts the resulting subarrays.
@@ -53,7 +53,7 @@ A divide-and-conquer algorithm that partitions the array around a pivot element 
 - **Space Complexity**
   - O(logn)
 
-[Quick Sort Header](include/sorting/quick_sort.hpp) | [Quick Sort Implementation](src/sorting/quick_sort.cpp)
+[Quick Sort Strategy](include/strategies/sorting/quick_sort_strategy.hpp) | [Quick Sort Implementation](src/strategies/sorting/quick_sort_strategy.cpp)
 
 # Lisence
 This project is licensed under the MIT License.
